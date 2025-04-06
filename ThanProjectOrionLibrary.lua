@@ -78,5 +78,17 @@ Tab:AddButton({
   	end    
 })
 
+local Tab = Window:MakeTab({
+	Name = "BetaTesting",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Bypass Hub Key",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/ThanErenevReal/LoadstringConvert/refs/heads/main/BypassHubKey.lua"))()
+  	end    
+})
 
 OrionLib:Init()
