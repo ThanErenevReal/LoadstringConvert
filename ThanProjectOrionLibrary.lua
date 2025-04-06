@@ -78,6 +78,13 @@ Tab:AddButton({
   	end    
 })
 
+Tab:AddButton({
+	Name = "BlackHoleCore Farm (F to break)",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/ThanErenevReal/LoadstringConvert/refs/heads/main/BlackHoleCore"))()
+  	end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "BetaTesting",
 	Icon = "rbxassetid://4483345998",
