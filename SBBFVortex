@@ -1,0 +1,177 @@
+--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/Rain-Design/Unnamed/main/Library.lua'))()
+Library.Theme = "Tokyo Night"
+local Flags = Library.Flags
+local KillAuraOn = true
+local InfStaminaOn = true
+local FlingBossOn=false
+ 
+local Class = "Vortex" -- type your class name that you equipped here
+ 
+local Window = Library:Window({
+   Text = "Skill Based Boss Fights V4.47"
+})
+ 
+local Tab = Window:Tab({
+   Text = "KillAura [OP]"
+})
+ 
+local Tab2 = Window:Tab({
+   Text = "Character Functions"
+})
+ 
+local Tab3 = Window:Tab({
+   Text = "Troll Functions (FE)"
+})
+ 
+local Tab4 = Window:Tab({
+   Text = "Credits"
+})
+ 
+local Section = Tab:Section({
+   Text = "OP Functions"
+})
+ 
+local Section2 = Tab2:Section({
+   Text = "Character Functions"
+})
+ 
+local Section3 = Tab3:Section({
+   Text = "Trolling Functions"
+})
+ 
+local Section4 = Tab4:Section({
+   Text = "Credits"
+})
+ 
+local Text = Section4:Button({
+   Text = "Credits: XPCallFunction"
+})
+ 
+Section:Button({
+   Text = "KillAura Start",
+   Callback = function()
+       KillAuraOn=true
+   end
+})
+ 
+Section:Button({
+   Text = "KillAura Stop",
+   Callback = function()
+       KillAuraOn=false
+   end
+})
+ 
+Section3:Toggle({
+   Text = "Fling Boss",
+   Callback = function(bool)
+       FlingBossOn=bool
+	   if bool == false then
+ 
+	    for _, BAV in pairs(game.Players.LocalPlayer.Character.HumanoidRootPart:GetChildren()) do
+		if BAV:IsA("BodyAngularVelocity") then 
+            BAV:Destroy()
+		end
+      end
+ 
+	  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(472.489868, 55.8513603, -13.6599884, 1, 0, 0, 0, 1, 0, 0, 0, 1) + Vector3.new(0, 10, 0)
+   end
+end
+})
+ 
+Section2:Toggle({
+   Text = "Infinity Stamina",
+   Callback = function(bool)
+       InfStaminaOn = bool
+	   if bool == false then
+		   game.Players.LocalPlayer.Energy.Value = 100
+	   end
+   end
+})
+ 
+--[[Section2:Slider({
+   Text = "Speed",
+   Default = 20,
+   Minimum = 0,
+   Maximum = 100
+})]]
+ 
+Tab4:Select()
+ 
+ 
+while task.wait(0.01) do
+	if InfStaminaOn == true then
+		game.Players.LocalPlayer.Energy.Value = math.huge
+	end
+ 
+ 
+    if FlingBossOn == true then
+      for _, BAV in pairs(game.Players.LocalPlayer.Character.HumanoidRootPart:GetChildren()) do
+		if BAV.Name == "wej8fosduhfh9hIXCHDSH!(h#(h*r$fks?d?drasduiasuhdUH ISADHSAUHD@ijeu(#h(#uh#(dh(hsudah(sibauiohD D?uuwehwefiuweh Huddffff @?##>#>#q?s<<s<as<)))))))" then return end
+      end
+		local bodyAngularVelocity = Instance.new("BodyAngularVelocity", game.Players.LocalPlayer.Character.HumanoidRootPart)
+		bodyAngularVelocity.Name = "wej8fosduhfh9hIXCHDSH!(h#(h*r$fks?d?drasduiasuhdUH ISADHSAUHD@ijeu(#h(#uh#(dh(hsudah(sibauiohD D?uuwehwefiuweh Huddffff @?##>#>#q?s<<s<as<)))))))"
+		bodyAngularVelocity.AngularVelocity = Vector3.new(0, 99999, 0)
+		bodyAngularVelocity.MaxTorque = Vector3.new(0, math.huge, 0)
+		bodyAngularVelocity.P = math.huge
+ 
+		for _, boss in pairs(workspace.Characters.Enemies:GetChildren()) do
+			if boss.Name ~= "Training Dummy" then
+                game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = boss.HumanoidRootPart.CFrame
+			end
+		end
+	end
+ 
+ 
+    if KillAuraOn == true then
+ 
+ 
+for i, v in pairs(workspace.Characters.Enemies:GetChildren()) do
+if v.Name ~= 'Training Dummy' then
+ 
+    if game.Players.LocalPlayer.Character:FindFirstChildOfClass('Tool') then
+        game.Players.LocalPlayer.Character:FindFirstChildOfClass('Tool'):WaitForChild('Combonum').Value = 0
+    end
+ 
+local args = {
+    [1] = Class,
+    [2] = {
+        ["Mousepos"] = Vector3.new(477.80950927734375, 58, -88.05561828613281)
+    }
+}
+ 
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Charge"):FireServer(unpack(args))
+      local args = {
+    [1] = Class,
+    [2] = {
+        ["Charge"] = 0,
+        ["Mousepos"] = Vector3.new(477.80950927734375, 58, -88.05561828613281),
+        ["ComboNum"] = 1
+    },
+    [3] = 1,
+    [4] = "196\226\134\169563041248341425220142Accelerate"
+}
+ 
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Activate"):FireServer(unpack(args))
+local args = {
+    [1] = v:WaitForChild("Humanoid"),
+    [2] = Class
+}
+ 
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Damage"):FireServer(unpack(args))
+ 
+ 
+    if v.Humanoid.Health == 0 then
+        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = v.HumanoidRootPart.CFrame
+    end
+ 
+end
+end
+ 
+ 
+	end
+ 
+ 
+end
